@@ -1,5 +1,4 @@
-const { ipcRenderer } = require('electron');
-
-ipcRenderer.invoke('get-cpu-count').then(cpuCount => {
+(async () => {
+    const cpuCount = await window.electron.getCpuCount();
     document.getElementById('cpu-info').innerText = `Number of CPUs: ${cpuCount}`;
-});
+  })();

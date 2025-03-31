@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const path  = require('path');
 const { getNumberOfCPUs } = require('./cpuInfo');
 
 let mainWindow;
@@ -8,8 +9,9 @@ app.on('ready', () => {
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false
+            contextIsolation: true, // Enforces separation of Electron APIs from the renderer context
+            nodeIntegration: false, // Prevents direct access to Node.js APIs in the renderer
+            preload: path.join(__dirname, 'preload.js') // Use a preload script to expose safe APIs
         }
     });
 
