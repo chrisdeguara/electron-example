@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Output directories
+dist/
+build/
+out/
+
+# Electron-specific cache and temporary files
+*.asar
+*.db
+*.sqlite
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Compiled binary files
+*.

@@ -1,0 +1,6 @@
+{
+    "watch": ["main.js", "renderer.js", "index.html", "*.html"],
+    "exec": "electron .",
+    "ext": "js,html,css"
+  }
+  
